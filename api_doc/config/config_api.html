@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.3" />
+<title>config.config_api API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>config.config_api</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import json 
+import os
+import numpy as np 
+import math
+
+
+def is_power_of_two(num):
+    return math.log(num, 2).is_integer()
+
+
+def load_hardware_config(overwrite_config_file_path=None): 
+    &#34;&#34;&#34;Loads and infers hardware configurations. 
+    
+    This function loads hardware config and infer hardware config not specified
+        explictly in the configuration file. 
+
+    Arguments:
+        overwrite_config_file_path: the file path of hardware config  
+            used to overwrite the default configuration 
+
+    Returns:
+        config_dict: the dictionary of hardware config 
+    &#34;&#34;&#34;
+
+    # Load default configuration first
+    curr_dir = os.path.dirname(os.path.realpath(__file__))
+    config_path_list = [&#34;hardware_config.json&#34;, &#34;processor_config.json&#34;, 
+                        &#34;core_config.json&#34;, &#34;execution_unit_config.json&#34;, 
+                        &#34;register_file_config.json&#34;, &#34;dram_config.json&#34;
+                        ]
+
+    config_dict = {}
+    for each_config_path in config_path_list:
+        full_config_path = os.path.join(curr_dir, each_config_path)
+
+        with open(full_config_path, &#34;r&#34;) as f:
+            tmp_config_dict = json.load(f)
+
+            for config_name, config_value in tmp_config_dict.items():
+                config_dict[config_name] = config_value 
+
+    # Load and overwrite config 
+    if overwrite_config_file_path is not None:
+        with open(overwrite_config_file_path, &#34;r&#34;) as f:
+            overwrite_config = json.load(f)
+
+        for config_name, config_value in overwrite_config.items():
+            config_dict[config_name] = config_value 
+
+    # Add inference here for missing configuration 
+    
+    # Infer the clock frequency for the simulation across multiple 
+    # clock domains
+    clock_freq_list = []
+    for config_name, config_value in config_dict.items():
+        if config_name.find(&#34;clock_freq&#34;) &gt;= 0:
+            clock_freq_list.append(config_value) 
+
+    assert len(clock_freq_list) &gt;= 1, &#34;Configuration files need to &#34; \
+        &#34;contain at least one clock source!&#34;  
+
+    config_dict[&#34;sim_clock_freq&#34;] = int(np.lcm.reduce(clock_freq_list))
+
+    # Infer total memory capacity
+    config_dict[&#34;dram_capacity&#34;] = (
+        config_dict[&#34;num_processor_x&#34;] * config_dict[&#34;num_processor_y&#34;] 
+        * config_dict[&#34;num_core_x&#34;] * config_dict[&#34;num_core_y&#34;] 
+        * config_dict[&#34;num_pg&#34;] * config_dict[&#34;num_pe&#34;] 
+        * config_dict[&#34;dram_bank_row&#34;] * config_dict[&#34;dram_bank_col&#34;] 
+        * config_dict[&#34;dram_bank_io_width&#34;]
+    )
+
+    # Infer the number of threads per warp 
+    pg_width = config_dict[&#34;num_pe&#34;] * config_dict[&#34;dram_bank_io_width&#34;]
+    assert (pg_width % config_dict[&#34;data_path_unit_size&#34;])\
+        == 0, &#34;The PG I/O width should be a multiple of &#34; \
+        &#34;the data path unit size&#34;
+    config_dict[&#34;num_threads_per_warp&#34;] = pg_width // 4 
+    assert (config_dict[&#34;num_threads_per_warp&#34;] == 32), &#34;The default value &#34; \
+        &#34;should be 32. Please remove this assertion if a different warp &#34; \
+        &#34;size is needed&#34;
+
+    # Check register file banks
+    assert is_power_of_two(config_dict[&#34;num_subcore_reg_file_bank&#34;]),\
+        &#34;num_subcore_reg_file_bank must be power of 2!&#34;
+    assert is_power_of_two(config_dict[&#34;num_pg_reg_file_bank&#34;]),\
+        &#34;num_pg_reg_file_bank must be power of 2!&#34;
+    
+    # Infer near-bank register file capacity
+    core_reg_file_size = config_dict[&#34;subcore_reg_file_size&#34;] \
+        * config_dict[&#34;num_subcore&#34;]
+    assert core_reg_file_size % config_dict[&#34;num_pg&#34;] == 0
+    config_dict[&#34;pg_reg_file_size&#34;] = core_reg_file_size \
+        // config_dict[&#34;num_pg&#34;]
+    
+    # Infer the total number of write ports
+    # For far-bank register file
+    config_dict[&#34;num_subcore_reg_file_write_port&#34;] = \
+        config_dict[&#34;num_fb_commit_port&#34;] \
+        + config_dict[&#34;num_fb_reg_move_engine&#34;]
+    # For near-bank register file
+    config_dict[&#34;num_pg_reg_file_write_port&#34;] = \
+        config_dict[&#34;num_nb_commit_port&#34;] \
+        + config_dict[&#34;num_nb_reg_move_engine&#34;]
+    
+    # Infer the total number of read ports 
+    # For far-bank register file
+    # TODO: change this if more categories of operand collectors are supported
+    config_dict[&#34;num_read_port_fb_rmw&#34;] = \
+        config_dict[&#34;num_subcore_reg_file_write_port&#34;]
+    config_dict[&#34;num_subcore_reg_file_read_port&#34;] = \
+        config_dict[&#34;num_opc_lsu&#34;] \
+        + config_dict[&#34;num_opc_fb_alu&#34;] \
+        + config_dict[&#34;num_opc_sfu&#34;] \
+        + config_dict[&#34;num_opc_cfu&#34;] \
+        + config_dict[&#34;num_opc_syncu&#34;] \
+        + config_dict[&#34;num_fb_reg_move_engine&#34;] \
+        + config_dict[&#34;num_read_port_fb_rmw&#34;]
+    # For near-bank register file
+    # TODO: change this if more categories of operand collectors are supported
+    config_dict[&#34;num_read_port_nb_rmw&#34;] = \
+        config_dict[&#34;num_pg_reg_file_write_port&#34;]
+    config_dict[&#34;num_pg_reg_file_read_port&#34;] = \
+        config_dict[&#34;num_opc_nb_alu&#34;] \
+        + config_dict[&#34;num_nb_reg_move_engine&#34;]
+
+    # Infer base read port id
+    # For far-bank register file
+    config_dict[&#34;base_regfile_read_port_id_cfu&#34;] = 0
+    config_dict[&#34;base_regfile_read_port_id_syncu&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_cfu&#34;] \
+        + config_dict[&#34;num_opc_cfu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_lsu&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_syncu&#34;] \
+        + config_dict[&#34;num_opc_syncu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_fb_alu&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_lsu&#34;] \
+        + config_dict[&#34;num_opc_lsu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_sfu&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_fb_alu&#34;] \
+        + config_dict[&#34;num_opc_fb_alu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_fb_reg_move_engine&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_sfu&#34;] \
+        + config_dict[&#34;num_opc_sfu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_fb_rmw&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_fb_reg_move_engine&#34;] \
+        + config_dict[&#34;num_fb_reg_move_engine&#34;]
+    # For near-bank register file
+    config_dict[&#34;base_regfile_read_port_id_nb_alu&#34;] = 0
+    config_dict[&#34;base_regfile_read_port_id_nb_reg_move_engine&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_nb_alu&#34;] \
+        + config_dict[&#34;num_opc_nb_alu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_nb_rmw&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_nb_reg_move_engine&#34;] \
+        + config_dict[&#34;num_nb_reg_move_engine&#34;]
+
+    # Infer base write port id
+    # For far-bank register file
+    config_dict[&#34;base_regfile_write_port_id_fb_reg_move_engine&#34;] = 0
+    config_dict[&#34;base_regfile_write_port_id_fb_commit&#34;] = \
+        config_dict[&#34;base_regfile_write_port_id_fb_reg_move_engine&#34;] \
+        + config_dict[&#34;num_fb_reg_move_engine&#34;]
+    # For near-bank register file
+    config_dict[&#34;base_regfile_write_port_id_nb_reg_move_engine&#34;] = 0
+    config_dict[&#34;base_regfile_write_port_id_nb_commit&#34;] = \
+        config_dict[&#34;base_regfile_write_port_id_nb_reg_move_engine&#34;] \
+        + config_dict[&#34;num_nb_reg_move_engine&#34;]
+
+    # Configure supported instruction
+    # TODO: support more
+    config_dict[&#34;alu_instr&#34;] =\
+        {&#34;add&#34;, &#34;sub&#34;, &#34;min&#34;, &#34;max&#34;, &#34;mul&#34;, &#34;mad&#34;, &#34;fma&#34;, &#34;div&#34;, &#34;rem&#34;, 
+         &#34;abs&#34;, &#34;and&#34;, &#34;or&#34;, &#34;not&#34;, &#34;xor&#34;, &#34;cnot&#34;, &#34;shl&#34;, &#34;shr&#34;, &#34;setp&#34;}
+    config_dict[&#34;sfu_instr&#34;] = \
+        {&#34;rcp&#34;, &#34;sqrt&#34;, &#34;rsqrt&#34;, &#34;cos&#34;, &#34;sin&#34;, &#34;lg2&#34;, &#34;ex2&#34;}
+    config_dict[&#34;lsu_instr&#34;] = {&#34;ld&#34;, &#34;st&#34;, &#34;cvta&#34;, &#34;mov&#34;}
+    config_dict[&#34;cfu_instr&#34;] = {&#34;bra&#34;, &#34;ret&#34;}
+    config_dict[&#34;syncu_instr&#34;] = {&#34;bar&#34;, &#34;barrier&#34;}
+    
+    return config_dict</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="config.config_api.is_power_of_two"><code class="name flex">
+<span>def <span class="ident">is_power_of_two</span></span>(<span>num)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def is_power_of_two(num):
+    return math.log(num, 2).is_integer()</code></pre>
+</details>
+</dd>
+<dt id="config.config_api.load_hardware_config"><code class="name flex">
+<span>def <span class="ident">load_hardware_config</span></span>(<span>overwrite_config_file_path=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loads and infers hardware configurations. </p>
+<p>This function loads hardware config and infer hardware config not specified
+explictly in the configuration file. </p>
+<h2 id="arguments">Arguments</h2>
+<p>overwrite_config_file_path: the file path of hardware config<br>
+used to overwrite the default configuration </p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>config_dict</code></dt>
+<dd>the dictionary of hardware config</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_hardware_config(overwrite_config_file_path=None): 
+    &#34;&#34;&#34;Loads and infers hardware configurations. 
+    
+    This function loads hardware config and infer hardware config not specified
+        explictly in the configuration file. 
+
+    Arguments:
+        overwrite_config_file_path: the file path of hardware config  
+            used to overwrite the default configuration 
+
+    Returns:
+        config_dict: the dictionary of hardware config 
+    &#34;&#34;&#34;
+
+    # Load default configuration first
+    curr_dir = os.path.dirname(os.path.realpath(__file__))
+    config_path_list = [&#34;hardware_config.json&#34;, &#34;processor_config.json&#34;, 
+                        &#34;core_config.json&#34;, &#34;execution_unit_config.json&#34;, 
+                        &#34;register_file_config.json&#34;, &#34;dram_config.json&#34;
+                        ]
+
+    config_dict = {}
+    for each_config_path in config_path_list:
+        full_config_path = os.path.join(curr_dir, each_config_path)
+
+        with open(full_config_path, &#34;r&#34;) as f:
+            tmp_config_dict = json.load(f)
+
+            for config_name, config_value in tmp_config_dict.items():
+                config_dict[config_name] = config_value 
+
+    # Load and overwrite config 
+    if overwrite_config_file_path is not None:
+        with open(overwrite_config_file_path, &#34;r&#34;) as f:
+            overwrite_config = json.load(f)
+
+        for config_name, config_value in overwrite_config.items():
+            config_dict[config_name] = config_value 
+
+    # Add inference here for missing configuration 
+    
+    # Infer the clock frequency for the simulation across multiple 
+    # clock domains
+    clock_freq_list = []
+    for config_name, config_value in config_dict.items():
+        if config_name.find(&#34;clock_freq&#34;) &gt;= 0:
+            clock_freq_list.append(config_value) 
+
+    assert len(clock_freq_list) &gt;= 1, &#34;Configuration files need to &#34; \
+        &#34;contain at least one clock source!&#34;  
+
+    config_dict[&#34;sim_clock_freq&#34;] = int(np.lcm.reduce(clock_freq_list))
+
+    # Infer total memory capacity
+    config_dict[&#34;dram_capacity&#34;] = (
+        config_dict[&#34;num_processor_x&#34;] * config_dict[&#34;num_processor_y&#34;] 
+        * config_dict[&#34;num_core_x&#34;] * config_dict[&#34;num_core_y&#34;] 
+        * config_dict[&#34;num_pg&#34;] * config_dict[&#34;num_pe&#34;] 
+        * config_dict[&#34;dram_bank_row&#34;] * config_dict[&#34;dram_bank_col&#34;] 
+        * config_dict[&#34;dram_bank_io_width&#34;]
+    )
+
+    # Infer the number of threads per warp 
+    pg_width = config_dict[&#34;num_pe&#34;] * config_dict[&#34;dram_bank_io_width&#34;]
+    assert (pg_width % config_dict[&#34;data_path_unit_size&#34;])\
+        == 0, &#34;The PG I/O width should be a multiple of &#34; \
+        &#34;the data path unit size&#34;
+    config_dict[&#34;num_threads_per_warp&#34;] = pg_width // 4 
+    assert (config_dict[&#34;num_threads_per_warp&#34;] == 32), &#34;The default value &#34; \
+        &#34;should be 32. Please remove this assertion if a different warp &#34; \
+        &#34;size is needed&#34;
+
+    # Check register file banks
+    assert is_power_of_two(config_dict[&#34;num_subcore_reg_file_bank&#34;]),\
+        &#34;num_subcore_reg_file_bank must be power of 2!&#34;
+    assert is_power_of_two(config_dict[&#34;num_pg_reg_file_bank&#34;]),\
+        &#34;num_pg_reg_file_bank must be power of 2!&#34;
+    
+    # Infer near-bank register file capacity
+    core_reg_file_size = config_dict[&#34;subcore_reg_file_size&#34;] \
+        * config_dict[&#34;num_subcore&#34;]
+    assert core_reg_file_size % config_dict[&#34;num_pg&#34;] == 0
+    config_dict[&#34;pg_reg_file_size&#34;] = core_reg_file_size \
+        // config_dict[&#34;num_pg&#34;]
+    
+    # Infer the total number of write ports
+    # For far-bank register file
+    config_dict[&#34;num_subcore_reg_file_write_port&#34;] = \
+        config_dict[&#34;num_fb_commit_port&#34;] \
+        + config_dict[&#34;num_fb_reg_move_engine&#34;]
+    # For near-bank register file
+    config_dict[&#34;num_pg_reg_file_write_port&#34;] = \
+        config_dict[&#34;num_nb_commit_port&#34;] \
+        + config_dict[&#34;num_nb_reg_move_engine&#34;]
+    
+    # Infer the total number of read ports 
+    # For far-bank register file
+    # TODO: change this if more categories of operand collectors are supported
+    config_dict[&#34;num_read_port_fb_rmw&#34;] = \
+        config_dict[&#34;num_subcore_reg_file_write_port&#34;]
+    config_dict[&#34;num_subcore_reg_file_read_port&#34;] = \
+        config_dict[&#34;num_opc_lsu&#34;] \
+        + config_dict[&#34;num_opc_fb_alu&#34;] \
+        + config_dict[&#34;num_opc_sfu&#34;] \
+        + config_dict[&#34;num_opc_cfu&#34;] \
+        + config_dict[&#34;num_opc_syncu&#34;] \
+        + config_dict[&#34;num_fb_reg_move_engine&#34;] \
+        + config_dict[&#34;num_read_port_fb_rmw&#34;]
+    # For near-bank register file
+    # TODO: change this if more categories of operand collectors are supported
+    config_dict[&#34;num_read_port_nb_rmw&#34;] = \
+        config_dict[&#34;num_pg_reg_file_write_port&#34;]
+    config_dict[&#34;num_pg_reg_file_read_port&#34;] = \
+        config_dict[&#34;num_opc_nb_alu&#34;] \
+        + config_dict[&#34;num_nb_reg_move_engine&#34;]
+
+    # Infer base read port id
+    # For far-bank register file
+    config_dict[&#34;base_regfile_read_port_id_cfu&#34;] = 0
+    config_dict[&#34;base_regfile_read_port_id_syncu&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_cfu&#34;] \
+        + config_dict[&#34;num_opc_cfu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_lsu&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_syncu&#34;] \
+        + config_dict[&#34;num_opc_syncu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_fb_alu&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_lsu&#34;] \
+        + config_dict[&#34;num_opc_lsu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_sfu&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_fb_alu&#34;] \
+        + config_dict[&#34;num_opc_fb_alu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_fb_reg_move_engine&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_sfu&#34;] \
+        + config_dict[&#34;num_opc_sfu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_fb_rmw&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_fb_reg_move_engine&#34;] \
+        + config_dict[&#34;num_fb_reg_move_engine&#34;]
+    # For near-bank register file
+    config_dict[&#34;base_regfile_read_port_id_nb_alu&#34;] = 0
+    config_dict[&#34;base_regfile_read_port_id_nb_reg_move_engine&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_nb_alu&#34;] \
+        + config_dict[&#34;num_opc_nb_alu&#34;]
+    config_dict[&#34;base_regfile_read_port_id_nb_rmw&#34;] = \
+        config_dict[&#34;base_regfile_read_port_id_nb_reg_move_engine&#34;] \
+        + config_dict[&#34;num_nb_reg_move_engine&#34;]
+
+    # Infer base write port id
+    # For far-bank register file
+    config_dict[&#34;base_regfile_write_port_id_fb_reg_move_engine&#34;] = 0
+    config_dict[&#34;base_regfile_write_port_id_fb_commit&#34;] = \
+        config_dict[&#34;base_regfile_write_port_id_fb_reg_move_engine&#34;] \
+        + config_dict[&#34;num_fb_reg_move_engine&#34;]
+    # For near-bank register file
+    config_dict[&#34;base_regfile_write_port_id_nb_reg_move_engine&#34;] = 0
+    config_dict[&#34;base_regfile_write_port_id_nb_commit&#34;] = \
+        config_dict[&#34;base_regfile_write_port_id_nb_reg_move_engine&#34;] \
+        + config_dict[&#34;num_nb_reg_move_engine&#34;]
+
+    # Configure supported instruction
+    # TODO: support more
+    config_dict[&#34;alu_instr&#34;] =\
+        {&#34;add&#34;, &#34;sub&#34;, &#34;min&#34;, &#34;max&#34;, &#34;mul&#34;, &#34;mad&#34;, &#34;fma&#34;, &#34;div&#34;, &#34;rem&#34;, 
+         &#34;abs&#34;, &#34;and&#34;, &#34;or&#34;, &#34;not&#34;, &#34;xor&#34;, &#34;cnot&#34;, &#34;shl&#34;, &#34;shr&#34;, &#34;setp&#34;}
+    config_dict[&#34;sfu_instr&#34;] = \
+        {&#34;rcp&#34;, &#34;sqrt&#34;, &#34;rsqrt&#34;, &#34;cos&#34;, &#34;sin&#34;, &#34;lg2&#34;, &#34;ex2&#34;}
+    config_dict[&#34;lsu_instr&#34;] = {&#34;ld&#34;, &#34;st&#34;, &#34;cvta&#34;, &#34;mov&#34;}
+    config_dict[&#34;cfu_instr&#34;] = {&#34;bra&#34;, &#34;ret&#34;}
+    config_dict[&#34;syncu_instr&#34;] = {&#34;bar&#34;, &#34;barrier&#34;}
+    
+    return config_dict</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="config" href="index.html">config</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="config.config_api.is_power_of_two" href="#config.config_api.is_power_of_two">is_power_of_two</a></code></li>
+<li><code><a title="config.config_api.load_hardware_config" href="#config.config_api.load_hardware_config">load_hardware_config</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.3</a>.</p>
+</footer>
+</body>
+</html>
