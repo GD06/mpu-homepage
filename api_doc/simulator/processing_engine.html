@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.8.3" />
-<title>simulator.test API documentation</title>
+<title>simulator.processing_engine API documentation</title>
 <meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,52 +19,90 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>simulator.test</code></h1>
+<h1 class="title">Module <code>simulator.processing_engine</code></h1>
 </header>
 <section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from simulator.bank import Bank 
+
+
+class ProcessingEngine:
+
+    def __init__(self, pe_id, env, config, log, pg):
+        self.pe_id = pe_id
+        self.env = env
+        self.config = config 
+        self.log = log 
+        self.pg = pg 
+
+        self.bank = Bank(env=env, config=config, log=log, pe=self) 
+        return 
+
+    def reset_status(self):
+        # (TODO) clear data structures not persistent across different thread
+        # block execution 
+        return </code></pre>
+</details>
 </section>
 <section>
-<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt><code class="name"><a title="simulator.test.test_alu" href="test_alu.html">simulator.test.test_alu</a></code></dt>
+<dt id="simulator.processing_engine.ProcessingEngine"><code class="flex name class">
+<span>class <span class="ident">ProcessingEngine</span></span>
+<span>(</span><span>pe_id, env, config, log, pg)</span>
+</code></dt>
 <dd>
 <div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="simulator.test.test_bank" href="test_bank.html">simulator.test.test_bank</a></code></dt>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ProcessingEngine:
+
+    def __init__(self, pe_id, env, config, log, pg):
+        self.pe_id = pe_id
+        self.env = env
+        self.config = config 
+        self.log = log 
+        self.pg = pg 
+
+        self.bank = Bank(env=env, config=config, log=log, pe=self) 
+        return 
+
+    def reset_status(self):
+        # (TODO) clear data structures not persistent across different thread
+        # block execution 
+        return </code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="simulator.processing_engine.ProcessingEngine.reset_status"><code class="name flex">
+<span>def <span class="ident">reset_status</span></span>(<span>self)</span>
+</code></dt>
 <dd>
 <div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="simulator.test.test_memory" href="test_memory.html">simulator.test.test_memory</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="simulator.test.test_operand_collector" href="test_operand_collector.html">simulator.test.test_operand_collector</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="simulator.test.test_reg_file" href="test_reg_file.html">simulator.test.test_reg_file</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="simulator.test.test_reg_move_engine" href="test_reg_move_engine.html">simulator.test.test_reg_move_engine</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="simulator.test.test_vectoradd" href="test_vectoradd.html">simulator.test.test_vectoradd</a></code></dt>
-<dd>
-<div class="desc"></div>
-</dd>
-<dt><code class="name"><a title="simulator.test.test_vectorsum" href="test_vectorsum.html">simulator.test.test_vectorsum</a></code></dt>
-<dd>
-<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reset_status(self):
+    # (TODO) clear data structures not persistent across different thread
+    # block execution 
+    return </code></pre>
+</details>
 </dd>
 </dl>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
+</dd>
+</dl>
 </section>
 </article>
 <nav id="sidebar">
@@ -75,19 +113,17 @@
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="simulator" href="../index.html">simulator</a></code></li>
+<li><code><a title="simulator" href="index.html">simulator</a></code></li>
 </ul>
 </li>
-<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
-<li><code><a title="simulator.test.test_alu" href="test_alu.html">simulator.test.test_alu</a></code></li>
-<li><code><a title="simulator.test.test_bank" href="test_bank.html">simulator.test.test_bank</a></code></li>
-<li><code><a title="simulator.test.test_memory" href="test_memory.html">simulator.test.test_memory</a></code></li>
-<li><code><a title="simulator.test.test_operand_collector" href="test_operand_collector.html">simulator.test.test_operand_collector</a></code></li>
-<li><code><a title="simulator.test.test_reg_file" href="test_reg_file.html">simulator.test.test_reg_file</a></code></li>
-<li><code><a title="simulator.test.test_reg_move_engine" href="test_reg_move_engine.html">simulator.test.test_reg_move_engine</a></code></li>
-<li><code><a title="simulator.test.test_vectoradd" href="test_vectoradd.html">simulator.test.test_vectoradd</a></code></li>
-<li><code><a title="simulator.test.test_vectorsum" href="test_vectorsum.html">simulator.test.test_vectorsum</a></code></li>
+<li>
+<h4><code><a title="simulator.processing_engine.ProcessingEngine" href="#simulator.processing_engine.ProcessingEngine">ProcessingEngine</a></code></h4>
+<ul class="">
+<li><code><a title="simulator.processing_engine.ProcessingEngine.reset_status" href="#simulator.processing_engine.ProcessingEngine.reset_status">reset_status</a></code></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.3" />
+<title>program.kernel API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>program.kernel</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from copy import deepcopy 
+from program.instruction import Instr 
+
+
+def _get_num_bits_by_type(type_str):
+    if type_str == &#34;.pred&#34;:
+        return 8  
+    elif type_str == &#34;.f32&#34;:
+        return 32
+    elif type_str == &#34;.b8&#34;:
+        return 8 
+    elif type_str == &#34;.b32&#34;:
+        return 32
+    elif type_str == &#34;.b64&#34;:
+        return 64
+    else:
+        raise NotImplementedError 
+
+
+class RegInfo:
+
+    def __init__(self, data_type, reg_prefix, num_regs):
+        self.data_type = data_type 
+        self.reg_prefix = reg_prefix 
+        self.num_regs = num_regs 
+        self.data_size = _get_num_bits_by_type(data_type) 
+        self.total_size = self.data_size * self.num_regs 
+
+        return
+
+    def update_num_regs(self, new_num_regs):
+        &#34;&#34;&#34;Update the number of registers&#34;&#34;&#34;
+        self.num_regs = new_num_regs 
+        self.total_size = self.data_size * self.num_regs 
+        return 
+
+    def __str__(self):
+        return &#34;reg prefix: {}, num of regs: {}, data type: {} &#34; \
+            &#34;total size: {}&#34;.format(
+                self.reg_prefix, self.num_regs, self.data_type,
+                self.data_size * self.num_regs 
+            )
+
+
+class SMEMInfo:
+
+    def __init__(self, alignment, data_type, var_name, num_elements):
+        self.alignment = alignment 
+        self.data_type = data_type 
+        self.data_size = alignment * _get_num_bits_by_type(data_type)
+        self.var_name = var_name 
+        self.num_elements = num_elements 
+        self.total_size = self.data_size * num_elements 
+
+        return 
+
+    def __str__(self):
+        return &#34;shared memory var name: {}, num of elements: {}, &#34; \
+            &#34;data size: {}, total_size: {}&#34;.format(
+                self.var_name, self.num_elements, 
+                self.data_size, self.total_size 
+            )
+
+
+class Kernel:
+
+    def __init__(self, lines, log):
+        self.kernel_context = lines
+        self.log = log
+        self._analysis()
+        self.log = None 
+        return 
+
+    def _analysis(self):
+        &#34;&#34;&#34;This function performs analysis on kernel context, and 
+        it includes two major steps as explained as follows:
+
+        Step 1: get the name of kernel and function parameters 
+    
+        Step 2: go through the rest of instructions 
+          Type I: indicate the usage of registers 
+          Type II: indicate the usage of shared memory
+          Type III: other instructions
+        &#34;&#34;&#34;
+
+        # Step 1
+        self.kernel_name = self.kernel_context[0].split(&#34; &#34;)[-1].strip(&#34;(&#34;)
+
+        start_pos = 0
+        end_pos = 0
+        self.arg_list = []
+
+        for line_id in range(len(self.kernel_context)):
+            curr_line = self.kernel_context[line_id]
+
+            if curr_line.startswith(&#34;.param&#34;):
+                param_name = curr_line.split(&#34; &#34;)[-1].strip(&#34;,&#34;)
+                self.arg_list.append(param_name)
+
+            if curr_line.find(&#34;{&#34;) &gt;= 0:
+                start_pos = line_id 
+
+            if curr_line.find(&#34;}&#34;) &gt;= 0:
+                end_pos = line_id 
+
+        # Step 2
+        self.shared_memory_usage = []
+        self.reg_usage = []
+        self.code_blocks = {}
+        self.instr_list = []
+
+        curr_pc = 0
+        self.code_blocks[&#34;BB0&#34;] = 0
+
+        for line_id in range(start_pos + 1, end_pos):
+            curr_line = self.kernel_context[line_id]
+            assert len(curr_line) &gt; 0, &#34;Encounter an empty line!&#34;
+
+            if curr_line.startswith(&#34;.reg&#34;):
+                data_type = curr_line.split(&#34; &#34;)[1].strip(&#34; \n\t&#34;)
+
+                reg_info = curr_line.split(&#34; &#34;)[-1].strip(&#34; \n\t&#34;) 
+                pos_1 = reg_info.find(&#34;&lt;&#34;)
+                pos_2 = reg_info.find(&#34;&gt;&#34;)
+
+                reg_prefix = reg_info[:pos_1]
+                num_regs = int(reg_info[pos_1 + 1: pos_2]) 
+
+                self.reg_usage.append(RegInfo(data_type, reg_prefix, num_regs))
+
+            elif curr_line.startswith(&#34;.shared&#34;):
+                alignment = int(curr_line.split(&#34; &#34;)[2].strip(&#34; \n\t&#34;))
+                data_type = curr_line.split(&#34; &#34;)[3].strip(&#34; \n\t&#34;)
+
+                smem_info = curr_line.split(&#34; &#34;)[-1].strip(&#34; \n\t&#34;)
+                pos_1 = smem_info.find(&#34;[&#34;)
+                pos_2 = smem_info.find(&#34;]&#34;)
+
+                smem_name = smem_info[:pos_1] 
+                num_elements = int(smem_info[pos_1 + 1: pos_2])
+
+                self.shared_memory_usage.append(
+                    SMEMInfo(alignment, data_type, smem_name, num_elements)
+                )
+
+            elif curr_line.startswith(&#34;BB&#34;) and curr_line.find(&#34;:&#34;) &gt;= 0:
+                pos = curr_line.find(&#34;:&#34;)
+                self.code_blocks[curr_line[:pos]] = deepcopy(curr_pc)
+
+            else:
+                self.log.debug(&#34;Parsing the instruction: {}&#34;.format(curr_line))
+                self.instr_list.append(Instr(curr_line))
+                curr_pc = curr_pc + 1
+
+        self.log.debug(
+            &#34;Finished parsing the kernel: {}&#34;.format(self.kernel_name)
+        )
+        self.log.debug(&#34;Argument list: {}&#34;.format(self.arg_list))
+        self.log.debug(&#34;The usage of register resources:&#34;)
+        for each_reg in self.reg_usage:
+            self.log.debug(each_reg) 
+        for each_smem in self.shared_memory_usage:
+            self.log.debug(each_smem)
+
+        self.log.debug(&#34;Instructions:&#34;)
+        for i in range(len(self.instr_list)):
+            self.log.debug(&#34;PC={}: {}&#34;.format(i, self.instr_list[i]))
+        self.log.debug(&#34;Coe blocks:&#34;)
+        self.log.debug(self.code_blocks)
+        return
+
+    def _align_a_to_b(self, a, b):
+        return ((a - 1) // b + 1) * b
+
+    def compute_resource_usage(self, data_path_unit_size, 
+                               num_threads_per_warp, num_pe):
+        &#34;&#34;&#34;Compute the usage of registers per warp and shared memory per block 
+
+        Args:
+            data_path_unit_size: the data path unit access size 
+                (default: 4byte).
+            num_threads_per_warp: the number of threads per warp.  
+            num_pe: the number of PEs per PG.  
+
+        Returns:
+            A tuple (reg_usage_per_warp, shared_memory_usage_per_block) 
+                contains the usage of registers and shared memory. 
+        &#34;&#34;&#34;
+        assert (num_threads_per_warp % num_pe) == 0, &#34;The number of threads &#34;  \
+            &#34;per warp should be dividable to the number of PEs.&#34;
+        num_threads_per_pe = num_threads_per_warp // num_pe 
+        
+        # calculate the alignment of address to access register file 
+        # and shared memory on hardware.
+        alignment = data_path_unit_size * num_threads_per_warp
+
+        # Step 1: compute the usage of register file
+        self.reg_offset = {}
+        self.reg_size = {}
+        reg_usage_per_warp = 0
+
+        for each_reg_info in self.reg_usage:
+            prefix_name = each_reg_info.reg_prefix 
+            self.reg_offset[prefix_name] = deepcopy(reg_usage_per_warp) 
+
+            size_in_bits_per_pe = each_reg_info.data_size * num_threads_per_pe
+            size_in_bytes_per_pe = ((size_in_bits_per_pe - 1) // 8) + 1
+            assert size_in_bytes_per_pe &gt; 0, &#34;The register should at least &#34; \
+                &#34;take one byte in the register file of PE&#34;
+
+            size_in_bytes_per_warp = size_in_bytes_per_pe * num_pe 
+            self.reg_size[prefix_name] = deepcopy(size_in_bytes_per_warp) 
+
+            total_size_in_bytes = self._align_a_to_b(
+                size_in_bytes_per_warp * each_reg_info.num_regs, alignment 
+            )
+
+            reg_usage_per_warp += total_size_in_bytes 
+
+        # Step 2: compute the usage of shared memory 
+        shared_memory_usage_per_block = 0
+        self.smem_offset = {}
+
+        for each_smem_info in self.shared_memory_usage:
+            var_name = each_smem_info.var_name 
+            self.smem_offset[var_name] = deepcopy(shared_memory_usage_per_block)
+
+            shared_memory_usage_per_block += self._align_a_to_b(
+                (each_smem_info.total_size - 1) // 8 + 1, alignment 
+            )
+
+        return (reg_usage_per_warp, shared_memory_usage_per_block) 
+
+    def init_instr_latency(self, config):
+        for instr in self.instr_list:
+            instr.set_latency(config)
+
+    def __str__(self):
+        raw_context = &#34;\n&#34;.join(self.kernel_context)
+        kernel_info = raw_context + &#34;\n\nInstruction Information:&#34;
+        for each_instr in self.instr_list:
+            kernel_info = kernel_info + &#34;\n{}&#34;.format(each_instr)
+        return kernel_info </code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="program.kernel.Kernel"><code class="flex name class">
+<span>class <span class="ident">Kernel</span></span>
+<span>(</span><span>lines, log)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Kernel:
+
+    def __init__(self, lines, log):
+        self.kernel_context = lines
+        self.log = log
+        self._analysis()
+        self.log = None 
+        return 
+
+    def _analysis(self):
+        &#34;&#34;&#34;This function performs analysis on kernel context, and 
+        it includes two major steps as explained as follows:
+
+        Step 1: get the name of kernel and function parameters 
+    
+        Step 2: go through the rest of instructions 
+          Type I: indicate the usage of registers 
+          Type II: indicate the usage of shared memory
+          Type III: other instructions
+        &#34;&#34;&#34;
+
+        # Step 1
+        self.kernel_name = self.kernel_context[0].split(&#34; &#34;)[-1].strip(&#34;(&#34;)
+
+        start_pos = 0
+        end_pos = 0
+        self.arg_list = []
+
+        for line_id in range(len(self.kernel_context)):
+            curr_line = self.kernel_context[line_id]
+
+            if curr_line.startswith(&#34;.param&#34;):
+                param_name = curr_line.split(&#34; &#34;)[-1].strip(&#34;,&#34;)
+                self.arg_list.append(param_name)
+
+            if curr_line.find(&#34;{&#34;) &gt;= 0:
+                start_pos = line_id 
+
+            if curr_line.find(&#34;}&#34;) &gt;= 0:
+                end_pos = line_id 
+
+        # Step 2
+        self.shared_memory_usage = []
+        self.reg_usage = []
+        self.code_blocks = {}
+        self.instr_list = []
+
+        curr_pc = 0
+        self.code_blocks[&#34;BB0&#34;] = 0
+
+        for line_id in range(start_pos + 1, end_pos):
+            curr_line = self.kernel_context[line_id]
+            assert len(curr_line) &gt; 0, &#34;Encounter an empty line!&#34;
+
+            if curr_line.startswith(&#34;.reg&#34;):
+                data_type = curr_line.split(&#34; &#34;)[1].strip(&#34; \n\t&#34;)
+
+                reg_info = curr_line.split(&#34; &#34;)[-1].strip(&#34; \n\t&#34;) 
+                pos_1 = reg_info.find(&#34;&lt;&#34;)
+                pos_2 = reg_info.find(&#34;&gt;&#34;)
+
+                reg_prefix = reg_info[:pos_1]
+                num_regs = int(reg_info[pos_1 + 1: pos_2]) 
+
+                self.reg_usage.append(RegInfo(data_type, reg_prefix, num_regs))
+
+            elif curr_line.startswith(&#34;.shared&#34;):
+                alignment = int(curr_line.split(&#34; &#34;)[2].strip(&#34; \n\t&#34;))
+                data_type = curr_line.split(&#34; &#34;)[3].strip(&#34; \n\t&#34;)
+
+                smem_info = curr_line.split(&#34; &#34;)[-1].strip(&#34; \n\t&#34;)
+                pos_1 = smem_info.find(&#34;[&#34;)
+                pos_2 = smem_info.find(&#34;]&#34;)
+
+                smem_name = smem_info[:pos_1] 
+                num_elements = int(smem_info[pos_1 + 1: pos_2])
+
+                self.shared_memory_usage.append(
+                    SMEMInfo(alignment, data_type, smem_name, num_elements)
+                )
+
+            elif curr_line.startswith(&#34;BB&#34;) and curr_line.find(&#34;:&#34;) &gt;= 0:
+                pos = curr_line.find(&#34;:&#34;)
+                self.code_blocks[curr_line[:pos]] = deepcopy(curr_pc)
+
+            else:
+                self.log.debug(&#34;Parsing the instruction: {}&#34;.format(curr_line))
+                self.instr_list.append(Instr(curr_line))
+                curr_pc = curr_pc + 1
+
+        self.log.debug(
+            &#34;Finished parsing the kernel: {}&#34;.format(self.kernel_name)
+        )
+        self.log.debug(&#34;Argument list: {}&#34;.format(self.arg_list))
+        self.log.debug(&#34;The usage of register resources:&#34;)
+        for each_reg in self.reg_usage:
+            self.log.debug(each_reg) 
+        for each_smem in self.shared_memory_usage:
+            self.log.debug(each_smem)
+
+        self.log.debug(&#34;Instructions:&#34;)
+        for i in range(len(self.instr_list)):
+            self.log.debug(&#34;PC={}: {}&#34;.format(i, self.instr_list[i]))
+        self.log.debug(&#34;Coe blocks:&#34;)
+        self.log.debug(self.code_blocks)
+        return
+
+    def _align_a_to_b(self, a, b):
+        return ((a - 1) // b + 1) * b
+
+    def compute_resource_usage(self, data_path_unit_size, 
+                               num_threads_per_warp, num_pe):
+        &#34;&#34;&#34;Compute the usage of registers per warp and shared memory per block 
+
+        Args:
+            data_path_unit_size: the data path unit access size 
+                (default: 4byte).
+            num_threads_per_warp: the number of threads per warp.  
+            num_pe: the number of PEs per PG.  
+
+        Returns:
+            A tuple (reg_usage_per_warp, shared_memory_usage_per_block) 
+                contains the usage of registers and shared memory. 
+        &#34;&#34;&#34;
+        assert (num_threads_per_warp % num_pe) == 0, &#34;The number of threads &#34;  \
+            &#34;per warp should be dividable to the number of PEs.&#34;
+        num_threads_per_pe = num_threads_per_warp // num_pe 
+        
+        # calculate the alignment of address to access register file 
+        # and shared memory on hardware.
+        alignment = data_path_unit_size * num_threads_per_warp
+
+        # Step 1: compute the usage of register file
+        self.reg_offset = {}
+        self.reg_size = {}
+        reg_usage_per_warp = 0
+
+        for each_reg_info in self.reg_usage:
+            prefix_name = each_reg_info.reg_prefix 
+            self.reg_offset[prefix_name] = deepcopy(reg_usage_per_warp) 
+
+            size_in_bits_per_pe = each_reg_info.data_size * num_threads_per_pe
+            size_in_bytes_per_pe = ((size_in_bits_per_pe - 1) // 8) + 1
+            assert size_in_bytes_per_pe &gt; 0, &#34;The register should at least &#34; \
+                &#34;take one byte in the register file of PE&#34;
+
+            size_in_bytes_per_warp = size_in_bytes_per_pe * num_pe 
+            self.reg_size[prefix_name] = deepcopy(size_in_bytes_per_warp) 
+
+            total_size_in_bytes = self._align_a_to_b(
+                size_in_bytes_per_warp * each_reg_info.num_regs, alignment 
+            )
+
+            reg_usage_per_warp += total_size_in_bytes 
+
+        # Step 2: compute the usage of shared memory 
+        shared_memory_usage_per_block = 0
+        self.smem_offset = {}
+
+        for each_smem_info in self.shared_memory_usage:
+            var_name = each_smem_info.var_name 
+            self.smem_offset[var_name] = deepcopy(shared_memory_usage_per_block)
+
+            shared_memory_usage_per_block += self._align_a_to_b(
+                (each_smem_info.total_size - 1) // 8 + 1, alignment 
+            )
+
+        return (reg_usage_per_warp, shared_memory_usage_per_block) 
+
+    def init_instr_latency(self, config):
+        for instr in self.instr_list:
+            instr.set_latency(config)
+
+    def __str__(self):
+        raw_context = &#34;\n&#34;.join(self.kernel_context)
+        kernel_info = raw_context + &#34;\n\nInstruction Information:&#34;
+        for each_instr in self.instr_list:
+            kernel_info = kernel_info + &#34;\n{}&#34;.format(each_instr)
+        return kernel_info </code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="program.kernel.Kernel.compute_resource_usage"><code class="name flex">
+<span>def <span class="ident">compute_resource_usage</span></span>(<span>self, data_path_unit_size, num_threads_per_warp, num_pe)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Compute the usage of registers per warp and shared memory per block </p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>data_path_unit_size</code></strong></dt>
+<dd>the data path unit access size
+(default: 4byte).</dd>
+<dt><strong><code>num_threads_per_warp</code></strong></dt>
+<dd>the number of threads per warp.
+</dd>
+<dt><strong><code>num_pe</code></strong></dt>
+<dd>the number of PEs per PG.
+</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A tuple (reg_usage_per_warp, shared_memory_usage_per_block)
+contains the usage of registers and shared memory.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compute_resource_usage(self, data_path_unit_size, 
+                           num_threads_per_warp, num_pe):
+    &#34;&#34;&#34;Compute the usage of registers per warp and shared memory per block 
+
+    Args:
+        data_path_unit_size: the data path unit access size 
+            (default: 4byte).
+        num_threads_per_warp: the number of threads per warp.  
+        num_pe: the number of PEs per PG.  
+
+    Returns:
+        A tuple (reg_usage_per_warp, shared_memory_usage_per_block) 
+            contains the usage of registers and shared memory. 
+    &#34;&#34;&#34;
+    assert (num_threads_per_warp % num_pe) == 0, &#34;The number of threads &#34;  \
+        &#34;per warp should be dividable to the number of PEs.&#34;
+    num_threads_per_pe = num_threads_per_warp // num_pe 
+    
+    # calculate the alignment of address to access register file 
+    # and shared memory on hardware.
+    alignment = data_path_unit_size * num_threads_per_warp
+
+    # Step 1: compute the usage of register file
+    self.reg_offset = {}
+    self.reg_size = {}
+    reg_usage_per_warp = 0
+
+    for each_reg_info in self.reg_usage:
+        prefix_name = each_reg_info.reg_prefix 
+        self.reg_offset[prefix_name] = deepcopy(reg_usage_per_warp) 
+
+        size_in_bits_per_pe = each_reg_info.data_size * num_threads_per_pe
+        size_in_bytes_per_pe = ((size_in_bits_per_pe - 1) // 8) + 1
+        assert size_in_bytes_per_pe &gt; 0, &#34;The register should at least &#34; \
+            &#34;take one byte in the register file of PE&#34;
+
+        size_in_bytes_per_warp = size_in_bytes_per_pe * num_pe 
+        self.reg_size[prefix_name] = deepcopy(size_in_bytes_per_warp) 
+
+        total_size_in_bytes = self._align_a_to_b(
+            size_in_bytes_per_warp * each_reg_info.num_regs, alignment 
+        )
+
+        reg_usage_per_warp += total_size_in_bytes 
+
+    # Step 2: compute the usage of shared memory 
+    shared_memory_usage_per_block = 0
+    self.smem_offset = {}
+
+    for each_smem_info in self.shared_memory_usage:
+        var_name = each_smem_info.var_name 
+        self.smem_offset[var_name] = deepcopy(shared_memory_usage_per_block)
+
+        shared_memory_usage_per_block += self._align_a_to_b(
+            (each_smem_info.total_size - 1) // 8 + 1, alignment 
+        )
+
+    return (reg_usage_per_warp, shared_memory_usage_per_block) </code></pre>
+</details>
+</dd>
+<dt id="program.kernel.Kernel.init_instr_latency"><code class="name flex">
+<span>def <span class="ident">init_instr_latency</span></span>(<span>self, config)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_instr_latency(self, config):
+    for instr in self.instr_list:
+        instr.set_latency(config)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="program.kernel.RegInfo"><code class="flex name class">
+<span>class <span class="ident">RegInfo</span></span>
+<span>(</span><span>data_type, reg_prefix, num_regs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class RegInfo:
+
+    def __init__(self, data_type, reg_prefix, num_regs):
+        self.data_type = data_type 
+        self.reg_prefix = reg_prefix 
+        self.num_regs = num_regs 
+        self.data_size = _get_num_bits_by_type(data_type) 
+        self.total_size = self.data_size * self.num_regs 
+
+        return
+
+    def update_num_regs(self, new_num_regs):
+        &#34;&#34;&#34;Update the number of registers&#34;&#34;&#34;
+        self.num_regs = new_num_regs 
+        self.total_size = self.data_size * self.num_regs 
+        return 
+
+    def __str__(self):
+        return &#34;reg prefix: {}, num of regs: {}, data type: {} &#34; \
+            &#34;total size: {}&#34;.format(
+                self.reg_prefix, self.num_regs, self.data_type,
+                self.data_size * self.num_regs 
+            )</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="program.kernel.RegInfo.update_num_regs"><code class="name flex">
+<span>def <span class="ident">update_num_regs</span></span>(<span>self, new_num_regs)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Update the number of registers</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_num_regs(self, new_num_regs):
+    &#34;&#34;&#34;Update the number of registers&#34;&#34;&#34;
+    self.num_regs = new_num_regs 
+    self.total_size = self.data_size * self.num_regs 
+    return </code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="program.kernel.SMEMInfo"><code class="flex name class">
+<span>class <span class="ident">SMEMInfo</span></span>
+<span>(</span><span>alignment, data_type, var_name, num_elements)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SMEMInfo:
+
+    def __init__(self, alignment, data_type, var_name, num_elements):
+        self.alignment = alignment 
+        self.data_type = data_type 
+        self.data_size = alignment * _get_num_bits_by_type(data_type)
+        self.var_name = var_name 
+        self.num_elements = num_elements 
+        self.total_size = self.data_size * num_elements 
+
+        return 
+
+    def __str__(self):
+        return &#34;shared memory var name: {}, num of elements: {}, &#34; \
+            &#34;data size: {}, total_size: {}&#34;.format(
+                self.var_name, self.num_elements, 
+                self.data_size, self.total_size 
+            )</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="program" href="index.html">program</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="program.kernel.Kernel" href="#program.kernel.Kernel">Kernel</a></code></h4>
+<ul class="">
+<li><code><a title="program.kernel.Kernel.compute_resource_usage" href="#program.kernel.Kernel.compute_resource_usage">compute_resource_usage</a></code></li>
+<li><code><a title="program.kernel.Kernel.init_instr_latency" href="#program.kernel.Kernel.init_instr_latency">init_instr_latency</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="program.kernel.RegInfo" href="#program.kernel.RegInfo">RegInfo</a></code></h4>
+<ul class="">
+<li><code><a title="program.kernel.RegInfo.update_num_regs" href="#program.kernel.RegInfo.update_num_regs">update_num_regs</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="program.kernel.SMEMInfo" href="#program.kernel.SMEMInfo">SMEMInfo</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.3</a>.</p>
+</footer>
+</body>
+</html>

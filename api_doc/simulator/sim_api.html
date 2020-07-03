@@ -1,0 +1,926 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.3" />
+<title>simulator.sim_api API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>simulator.sim_api</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import simpy 
+import logging 
+
+from simulator.processor import Processor
+from simulator.memory import Memory 
+
+
+class Hardware:
+
+    def __init__(self, config, env, log):
+        self.config = config 
+        self.env = env 
+        self.log = log 
+
+        self.processor_array = {}
+        for i in range(config[&#34;num_processor_x&#34;]):
+            for j in range(config[&#34;num_processor_y&#34;]):
+                proc = Processor(
+                    proc_id=(i, j),
+                    env=env,
+                    config=config,
+                    log=log,
+                    hardware=self,
+                )
+                self.processor_array[(i, j)] = proc 
+
+        mem_alignment = (config[&#34;num_processor_x&#34;] 
+                         * config[&#34;num_processor_y&#34;]
+                         * config[&#34;num_core_x&#34;]
+                         * config[&#34;num_core_y&#34;]
+                         * config[&#34;num_pg&#34;] * config[&#34;num_pe&#34;]
+                         * config[&#34;dram_bank_io_width&#34;])
+        self.mem = Memory(alignment=mem_alignment, size=config[&#34;dram_capacity&#34;])
+
+        return 
+
+    def addr_hashing(self, addr):
+        &#34;&#34;&#34;This function returns the detailed memory hierarchy mapping given 
+        the global physical address.
+        
+        Args:
+            addr: global physical address 
+
+        Returns:
+            loc: a location tuple formatted as 
+                (proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id, 
+                bank_addr, bank_interface_offset)
+        &#34;&#34;&#34;
+        proc_id_y = -1
+        proc_id_x = -1
+        core_id_y = -1
+        core_id_x = -1
+        pg_id = -1
+        pe_id = -1
+        bank_addr = -1
+        bank_interface_offset = -1
+
+        if (self.config[&#34;dram_addr_map&#34;] == &#34;dram_addr_map_1&#34;):
+            bank_interface_offset = addr % self.config[&#34;dram_bank_io_width&#34;]
+            addr = addr // self.config[&#34;dram_bank_io_width&#34;]
+            pe_id = addr % self.config[&#34;num_pe&#34;]
+            addr = addr // self.config[&#34;num_pe&#34;]
+            pg_id = addr % self.config[&#34;num_pg&#34;]
+            addr = addr // self.config[&#34;num_pg&#34;]
+            core_id_x = addr % self.config[&#34;num_core_x&#34;]
+            addr = addr // self.config[&#34;num_core_x&#34;]
+            core_id_y = addr % self.config[&#34;num_core_y&#34;]
+            addr = addr // self.config[&#34;num_core_y&#34;]
+            proc_id_x = addr % self.config[&#34;num_processor_x&#34;]
+            addr = addr // self.config[&#34;num_processor_x&#34;]
+            proc_id_y = addr % self.config[&#34;num_processor_y&#34;]
+            addr = addr // self.config[&#34;num_processor_y&#34;]
+            bank_addr = addr % (self.config[&#34;dram_bank_row&#34;] 
+                                * self.config[&#34;dram_bank_col&#34;])
+        else:
+            raise NotImplementedError(
+                &#34;Unrecognized address mapping scheme: {}&#34;.format(
+                    self.config[&#34;dram_addr_map&#34;])
+            )
+        return (proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id, 
+                bank_addr, bank_interface_offset)
+
+    def re_addr_hashing(self, loc):
+        &#34;&#34;&#34;This function returns the global physical address given the detailed
+        memory hierarchy mapping.
+        
+        Args: loc: a location tuple formatted as
+            (proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id, 
+            bank_addr, bank_interface_offset)
+
+        Return:
+            addr: global physical address
+        &#34;&#34;&#34;
+
+        proc_id_y = loc[0]
+        proc_id_x = loc[1]
+        core_id_y = loc[2]
+        core_id_x = loc[3]
+        pg_id = loc[4]
+        pe_id = loc[5]
+        bank_addr = loc[6]
+        bank_interface_offset = loc[7]
+        addr = 0
+        if(self.config[&#34;dram_addr_map&#34;] == &#34;dram_addr_map_1&#34;):
+            addr = addr + bank_addr
+            addr = addr * self.config[&#34;num_processor_y&#34;] + proc_id_y
+            addr = addr * self.config[&#34;num_processor_x&#34;] + proc_id_x
+            addr = addr * self.config[&#34;num_core_y&#34;] + core_id_y
+            addr = addr * self.config[&#34;num_core_x&#34;] + core_id_x
+            addr = addr * self.config[&#34;num_pg&#34;] + pg_id
+            addr = addr * self.config[&#34;num_pe&#34;] + pe_id
+            addr = (addr * self.config[&#34;dram_bank_io_width&#34;] 
+                    + bank_interface_offset)
+        else:
+            raise NotImplementedError(
+                &#34;Unrecognized address mapping scheme: {}&#34;.format(
+                    self.config[&#34;dram_addr_map&#34;])
+            )
+        return addr
+
+    def translate_bank_addr(self, bank_addr):
+        &#34;&#34;&#34;translate dram bank address to row and column address
+        Args:
+            bank_addr: the local bank address (aligned to bank interface width)
+        Return:
+            row_addr: bank row address
+            col_addr: bank column address
+        &#34;&#34;&#34;
+        row_addr = -1
+        col_addr = -1
+        if (self.config[&#34;dram_addr_map&#34;] == &#34;dram_addr_map_1&#34;):
+            col_addr = bank_addr % (self.config[&#34;dram_bank_col&#34;])
+            row_addr = ((bank_addr // (self.config[&#34;dram_bank_col&#34;])) 
+                        % self.config[&#34;dram_bank_row&#34;])
+        else:
+            raise NotImplementedError(
+                &#34;Unrecognized address mapping scheme: {}&#34;.format(
+                    self.config[&#34;dram_addr_map&#34;])
+            )
+        return row_addr, col_addr
+
+    def run_simulation(
+        self, kernel, kernel_args, grid_dim, block_dim, block_schedule
+    ):
+        &#34;&#34;&#34;This function invokes the simulation providing the executable 
+        kernel, the value of kernel arguments, the dimension of grid, the 
+        dimension of thread block, and the schedule of thread blocks. 
+
+        Args:
+            kernel: the executable kernel of MPU hardware. 
+            kernel_args: a list of values for kernel arguments. 
+            grid_dim: the dimension of block grid. 
+            block_dim: the dimension of a thread block. 
+            block_schedule: a dictionary mapping from thread block ID to the
+                core ID. 
+
+        Returns:
+            (dur, sim_clock_freq): a tuple of the duration of simulation (the 
+                total number of cycles) and the clock frequency of simulation 
+                with the unit detailed in the configuration. 
+        &#34;&#34;&#34;
+
+        # Step 1: construct the dictionary for the arguments of kernel and 
+        # compute the register and shared memory usage for the kernel 
+        # Also, initialize the latency of instructions in this kernel
+        param_dict = {}
+        assert len(kernel.arg_list) == len(kernel_args), &#34;The length of &#34; \
+            &#34;provided argument values does not equal to the length of &#34; \
+            &#34;kernel argument list&#34;
+
+        for i in range(len(kernel.arg_list)):
+            param_name = kernel.arg_list[i]
+            param_value = kernel_args[i]
+            param_dict[param_name] = param_value
+
+        reg_usage_per_warp, shared_memory_usage_per_block = (
+            kernel.compute_resource_usage(
+                data_path_unit_size=self.config[&#34;data_path_unit_size&#34;],
+                num_threads_per_warp=self.config[&#34;num_threads_per_warp&#34;],
+                num_pe=self.config[&#34;num_pe&#34;],
+            ) 
+        )
+
+        kernel.init_instr_latency(self.config)
+
+        # Step 2: construct a dictionary mapping from core ID to a list of 
+        # thread blocks running on this core. 
+        block_task_dict = {}
+
+        for block_id_z in range(grid_dim[0]):
+            for block_id_y in range(grid_dim[1]):
+                for block_id_x in range(grid_dim[2]):
+                    block_id = block_id_z 
+                    block_id = block_id * grid_dim[1] + block_id_y 
+                    block_id = block_id * grid_dim[2] + block_id_x 
+
+                    global_core_id = block_schedule[block_id] 
+                    loc = self.addr_hashing(
+                        global_core_id 
+                        * self.config[&#34;num_pg&#34;]
+                        * self.config[&#34;num_pe&#34;]
+                        * self.config[&#34;dram_bank_io_width&#34;]
+                    )
+                    core_loc = loc[:4]
+
+                    if core_loc not in block_task_dict:
+                        block_task_dict[core_loc] = []
+                    block_task_dict[core_loc].append(
+                        (block_id_z, block_id_y, block_id_x)
+                    )
+
+        # Step 3: spawn a process for each task list 
+        for each_core_id, each_task in block_task_dict.items():
+            proc_id_y = each_core_id[0]
+            proc_id_x = each_core_id[1]
+            core_id_y = each_core_id[2]
+            core_id_x = each_core_id[3]
+
+            self.env.process(
+                self.processor_array[(proc_id_x, proc_id_y)].core_array[
+                    (core_id_x, core_id_y)].run_simulation(
+                        reg_usage_per_warp, shared_memory_usage_per_block,  
+                        kernel, param_dict, grid_dim, block_dim, each_task 
+                )
+            )
+
+        # Step 4: invoke the simulation 
+        start_cycle = self.env.now
+        self.env.run() 
+        end_cycle = self.env.now 
+
+        dur = end_cycle - start_cycle 
+        sim_clock_freq = self.config[&#34;sim_clock_freq&#34;]
+
+        return (dur, sim_clock_freq) 
+
+
+def init_hardware(hw_config_dict, logger=None):
+    &#34;&#34;&#34;Initiate a hardware instance according to config 
+
+    Args:
+        hw_config_dict: the input hardware config 
+        logger: (optional) the logger used to record logs 
+
+    Returns:
+        hardware: the initalized hardware 
+    &#34;&#34;&#34;
+
+    if logger is None:
+        logging_level = logging.ERROR 
+
+        # Uncomment the next line to enable a debug log output 
+        # logging_level = logging.DEBUG 
+
+        logger = logging.getLogger(__name__)
+        logger.setLevel(logging_level)
+        ch = logging.StreamHandler()
+        ch.setLevel(logging_level)
+        logger.addHandler(ch)
+
+    env = simpy.Environment() 
+    hardware = Hardware(env=env, config=hw_config_dict, log=logger)
+    
+    return hardware </code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="simulator.sim_api.init_hardware"><code class="name flex">
+<span>def <span class="ident">init_hardware</span></span>(<span>hw_config_dict, logger=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Initiate a hardware instance according to config </p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>hw_config_dict</code></strong></dt>
+<dd>the input hardware config </dd>
+<dt><strong><code>logger</code></strong></dt>
+<dd>(optional) the logger used to record logs </dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>hardware</code></dt>
+<dd>the initalized hardware</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def init_hardware(hw_config_dict, logger=None):
+    &#34;&#34;&#34;Initiate a hardware instance according to config 
+
+    Args:
+        hw_config_dict: the input hardware config 
+        logger: (optional) the logger used to record logs 
+
+    Returns:
+        hardware: the initalized hardware 
+    &#34;&#34;&#34;
+
+    if logger is None:
+        logging_level = logging.ERROR 
+
+        # Uncomment the next line to enable a debug log output 
+        # logging_level = logging.DEBUG 
+
+        logger = logging.getLogger(__name__)
+        logger.setLevel(logging_level)
+        ch = logging.StreamHandler()
+        ch.setLevel(logging_level)
+        logger.addHandler(ch)
+
+    env = simpy.Environment() 
+    hardware = Hardware(env=env, config=hw_config_dict, log=logger)
+    
+    return hardware </code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="simulator.sim_api.Hardware"><code class="flex name class">
+<span>class <span class="ident">Hardware</span></span>
+<span>(</span><span>config, env, log)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Hardware:
+
+    def __init__(self, config, env, log):
+        self.config = config 
+        self.env = env 
+        self.log = log 
+
+        self.processor_array = {}
+        for i in range(config[&#34;num_processor_x&#34;]):
+            for j in range(config[&#34;num_processor_y&#34;]):
+                proc = Processor(
+                    proc_id=(i, j),
+                    env=env,
+                    config=config,
+                    log=log,
+                    hardware=self,
+                )
+                self.processor_array[(i, j)] = proc 
+
+        mem_alignment = (config[&#34;num_processor_x&#34;] 
+                         * config[&#34;num_processor_y&#34;]
+                         * config[&#34;num_core_x&#34;]
+                         * config[&#34;num_core_y&#34;]
+                         * config[&#34;num_pg&#34;] * config[&#34;num_pe&#34;]
+                         * config[&#34;dram_bank_io_width&#34;])
+        self.mem = Memory(alignment=mem_alignment, size=config[&#34;dram_capacity&#34;])
+
+        return 
+
+    def addr_hashing(self, addr):
+        &#34;&#34;&#34;This function returns the detailed memory hierarchy mapping given 
+        the global physical address.
+        
+        Args:
+            addr: global physical address 
+
+        Returns:
+            loc: a location tuple formatted as 
+                (proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id, 
+                bank_addr, bank_interface_offset)
+        &#34;&#34;&#34;
+        proc_id_y = -1
+        proc_id_x = -1
+        core_id_y = -1
+        core_id_x = -1
+        pg_id = -1
+        pe_id = -1
+        bank_addr = -1
+        bank_interface_offset = -1
+
+        if (self.config[&#34;dram_addr_map&#34;] == &#34;dram_addr_map_1&#34;):
+            bank_interface_offset = addr % self.config[&#34;dram_bank_io_width&#34;]
+            addr = addr // self.config[&#34;dram_bank_io_width&#34;]
+            pe_id = addr % self.config[&#34;num_pe&#34;]
+            addr = addr // self.config[&#34;num_pe&#34;]
+            pg_id = addr % self.config[&#34;num_pg&#34;]
+            addr = addr // self.config[&#34;num_pg&#34;]
+            core_id_x = addr % self.config[&#34;num_core_x&#34;]
+            addr = addr // self.config[&#34;num_core_x&#34;]
+            core_id_y = addr % self.config[&#34;num_core_y&#34;]
+            addr = addr // self.config[&#34;num_core_y&#34;]
+            proc_id_x = addr % self.config[&#34;num_processor_x&#34;]
+            addr = addr // self.config[&#34;num_processor_x&#34;]
+            proc_id_y = addr % self.config[&#34;num_processor_y&#34;]
+            addr = addr // self.config[&#34;num_processor_y&#34;]
+            bank_addr = addr % (self.config[&#34;dram_bank_row&#34;] 
+                                * self.config[&#34;dram_bank_col&#34;])
+        else:
+            raise NotImplementedError(
+                &#34;Unrecognized address mapping scheme: {}&#34;.format(
+                    self.config[&#34;dram_addr_map&#34;])
+            )
+        return (proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id, 
+                bank_addr, bank_interface_offset)
+
+    def re_addr_hashing(self, loc):
+        &#34;&#34;&#34;This function returns the global physical address given the detailed
+        memory hierarchy mapping.
+        
+        Args: loc: a location tuple formatted as
+            (proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id, 
+            bank_addr, bank_interface_offset)
+
+        Return:
+            addr: global physical address
+        &#34;&#34;&#34;
+
+        proc_id_y = loc[0]
+        proc_id_x = loc[1]
+        core_id_y = loc[2]
+        core_id_x = loc[3]
+        pg_id = loc[4]
+        pe_id = loc[5]
+        bank_addr = loc[6]
+        bank_interface_offset = loc[7]
+        addr = 0
+        if(self.config[&#34;dram_addr_map&#34;] == &#34;dram_addr_map_1&#34;):
+            addr = addr + bank_addr
+            addr = addr * self.config[&#34;num_processor_y&#34;] + proc_id_y
+            addr = addr * self.config[&#34;num_processor_x&#34;] + proc_id_x
+            addr = addr * self.config[&#34;num_core_y&#34;] + core_id_y
+            addr = addr * self.config[&#34;num_core_x&#34;] + core_id_x
+            addr = addr * self.config[&#34;num_pg&#34;] + pg_id
+            addr = addr * self.config[&#34;num_pe&#34;] + pe_id
+            addr = (addr * self.config[&#34;dram_bank_io_width&#34;] 
+                    + bank_interface_offset)
+        else:
+            raise NotImplementedError(
+                &#34;Unrecognized address mapping scheme: {}&#34;.format(
+                    self.config[&#34;dram_addr_map&#34;])
+            )
+        return addr
+
+    def translate_bank_addr(self, bank_addr):
+        &#34;&#34;&#34;translate dram bank address to row and column address
+        Args:
+            bank_addr: the local bank address (aligned to bank interface width)
+        Return:
+            row_addr: bank row address
+            col_addr: bank column address
+        &#34;&#34;&#34;
+        row_addr = -1
+        col_addr = -1
+        if (self.config[&#34;dram_addr_map&#34;] == &#34;dram_addr_map_1&#34;):
+            col_addr = bank_addr % (self.config[&#34;dram_bank_col&#34;])
+            row_addr = ((bank_addr // (self.config[&#34;dram_bank_col&#34;])) 
+                        % self.config[&#34;dram_bank_row&#34;])
+        else:
+            raise NotImplementedError(
+                &#34;Unrecognized address mapping scheme: {}&#34;.format(
+                    self.config[&#34;dram_addr_map&#34;])
+            )
+        return row_addr, col_addr
+
+    def run_simulation(
+        self, kernel, kernel_args, grid_dim, block_dim, block_schedule
+    ):
+        &#34;&#34;&#34;This function invokes the simulation providing the executable 
+        kernel, the value of kernel arguments, the dimension of grid, the 
+        dimension of thread block, and the schedule of thread blocks. 
+
+        Args:
+            kernel: the executable kernel of MPU hardware. 
+            kernel_args: a list of values for kernel arguments. 
+            grid_dim: the dimension of block grid. 
+            block_dim: the dimension of a thread block. 
+            block_schedule: a dictionary mapping from thread block ID to the
+                core ID. 
+
+        Returns:
+            (dur, sim_clock_freq): a tuple of the duration of simulation (the 
+                total number of cycles) and the clock frequency of simulation 
+                with the unit detailed in the configuration. 
+        &#34;&#34;&#34;
+
+        # Step 1: construct the dictionary for the arguments of kernel and 
+        # compute the register and shared memory usage for the kernel 
+        # Also, initialize the latency of instructions in this kernel
+        param_dict = {}
+        assert len(kernel.arg_list) == len(kernel_args), &#34;The length of &#34; \
+            &#34;provided argument values does not equal to the length of &#34; \
+            &#34;kernel argument list&#34;
+
+        for i in range(len(kernel.arg_list)):
+            param_name = kernel.arg_list[i]
+            param_value = kernel_args[i]
+            param_dict[param_name] = param_value
+
+        reg_usage_per_warp, shared_memory_usage_per_block = (
+            kernel.compute_resource_usage(
+                data_path_unit_size=self.config[&#34;data_path_unit_size&#34;],
+                num_threads_per_warp=self.config[&#34;num_threads_per_warp&#34;],
+                num_pe=self.config[&#34;num_pe&#34;],
+            ) 
+        )
+
+        kernel.init_instr_latency(self.config)
+
+        # Step 2: construct a dictionary mapping from core ID to a list of 
+        # thread blocks running on this core. 
+        block_task_dict = {}
+
+        for block_id_z in range(grid_dim[0]):
+            for block_id_y in range(grid_dim[1]):
+                for block_id_x in range(grid_dim[2]):
+                    block_id = block_id_z 
+                    block_id = block_id * grid_dim[1] + block_id_y 
+                    block_id = block_id * grid_dim[2] + block_id_x 
+
+                    global_core_id = block_schedule[block_id] 
+                    loc = self.addr_hashing(
+                        global_core_id 
+                        * self.config[&#34;num_pg&#34;]
+                        * self.config[&#34;num_pe&#34;]
+                        * self.config[&#34;dram_bank_io_width&#34;]
+                    )
+                    core_loc = loc[:4]
+
+                    if core_loc not in block_task_dict:
+                        block_task_dict[core_loc] = []
+                    block_task_dict[core_loc].append(
+                        (block_id_z, block_id_y, block_id_x)
+                    )
+
+        # Step 3: spawn a process for each task list 
+        for each_core_id, each_task in block_task_dict.items():
+            proc_id_y = each_core_id[0]
+            proc_id_x = each_core_id[1]
+            core_id_y = each_core_id[2]
+            core_id_x = each_core_id[3]
+
+            self.env.process(
+                self.processor_array[(proc_id_x, proc_id_y)].core_array[
+                    (core_id_x, core_id_y)].run_simulation(
+                        reg_usage_per_warp, shared_memory_usage_per_block,  
+                        kernel, param_dict, grid_dim, block_dim, each_task 
+                )
+            )
+
+        # Step 4: invoke the simulation 
+        start_cycle = self.env.now
+        self.env.run() 
+        end_cycle = self.env.now 
+
+        dur = end_cycle - start_cycle 
+        sim_clock_freq = self.config[&#34;sim_clock_freq&#34;]
+
+        return (dur, sim_clock_freq) </code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="simulator.sim_api.Hardware.addr_hashing"><code class="name flex">
+<span>def <span class="ident">addr_hashing</span></span>(<span>self, addr)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function returns the detailed memory hierarchy mapping given
+the global physical address.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>addr</code></strong></dt>
+<dd>global physical address </dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>loc</code></dt>
+<dd>a location tuple formatted as
+(proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id,
+bank_addr, bank_interface_offset)</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def addr_hashing(self, addr):
+    &#34;&#34;&#34;This function returns the detailed memory hierarchy mapping given 
+    the global physical address.
+    
+    Args:
+        addr: global physical address 
+
+    Returns:
+        loc: a location tuple formatted as 
+            (proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id, 
+            bank_addr, bank_interface_offset)
+    &#34;&#34;&#34;
+    proc_id_y = -1
+    proc_id_x = -1
+    core_id_y = -1
+    core_id_x = -1
+    pg_id = -1
+    pe_id = -1
+    bank_addr = -1
+    bank_interface_offset = -1
+
+    if (self.config[&#34;dram_addr_map&#34;] == &#34;dram_addr_map_1&#34;):
+        bank_interface_offset = addr % self.config[&#34;dram_bank_io_width&#34;]
+        addr = addr // self.config[&#34;dram_bank_io_width&#34;]
+        pe_id = addr % self.config[&#34;num_pe&#34;]
+        addr = addr // self.config[&#34;num_pe&#34;]
+        pg_id = addr % self.config[&#34;num_pg&#34;]
+        addr = addr // self.config[&#34;num_pg&#34;]
+        core_id_x = addr % self.config[&#34;num_core_x&#34;]
+        addr = addr // self.config[&#34;num_core_x&#34;]
+        core_id_y = addr % self.config[&#34;num_core_y&#34;]
+        addr = addr // self.config[&#34;num_core_y&#34;]
+        proc_id_x = addr % self.config[&#34;num_processor_x&#34;]
+        addr = addr // self.config[&#34;num_processor_x&#34;]
+        proc_id_y = addr % self.config[&#34;num_processor_y&#34;]
+        addr = addr // self.config[&#34;num_processor_y&#34;]
+        bank_addr = addr % (self.config[&#34;dram_bank_row&#34;] 
+                            * self.config[&#34;dram_bank_col&#34;])
+    else:
+        raise NotImplementedError(
+            &#34;Unrecognized address mapping scheme: {}&#34;.format(
+                self.config[&#34;dram_addr_map&#34;])
+        )
+    return (proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id, 
+            bank_addr, bank_interface_offset)</code></pre>
+</details>
+</dd>
+<dt id="simulator.sim_api.Hardware.re_addr_hashing"><code class="name flex">
+<span>def <span class="ident">re_addr_hashing</span></span>(<span>self, loc)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function returns the global physical address given the detailed
+memory hierarchy mapping.</p>
+<p>Args: loc: a location tuple formatted as
+(proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id,
+bank_addr, bank_interface_offset)</p>
+<h2 id="return">Return</h2>
+<p>addr: global physical address</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def re_addr_hashing(self, loc):
+    &#34;&#34;&#34;This function returns the global physical address given the detailed
+    memory hierarchy mapping.
+    
+    Args: loc: a location tuple formatted as
+        (proc_id_y, proc_id_x, core_id_y, core_id_x, pg_id, pe_id, 
+        bank_addr, bank_interface_offset)
+
+    Return:
+        addr: global physical address
+    &#34;&#34;&#34;
+
+    proc_id_y = loc[0]
+    proc_id_x = loc[1]
+    core_id_y = loc[2]
+    core_id_x = loc[3]
+    pg_id = loc[4]
+    pe_id = loc[5]
+    bank_addr = loc[6]
+    bank_interface_offset = loc[7]
+    addr = 0
+    if(self.config[&#34;dram_addr_map&#34;] == &#34;dram_addr_map_1&#34;):
+        addr = addr + bank_addr
+        addr = addr * self.config[&#34;num_processor_y&#34;] + proc_id_y
+        addr = addr * self.config[&#34;num_processor_x&#34;] + proc_id_x
+        addr = addr * self.config[&#34;num_core_y&#34;] + core_id_y
+        addr = addr * self.config[&#34;num_core_x&#34;] + core_id_x
+        addr = addr * self.config[&#34;num_pg&#34;] + pg_id
+        addr = addr * self.config[&#34;num_pe&#34;] + pe_id
+        addr = (addr * self.config[&#34;dram_bank_io_width&#34;] 
+                + bank_interface_offset)
+    else:
+        raise NotImplementedError(
+            &#34;Unrecognized address mapping scheme: {}&#34;.format(
+                self.config[&#34;dram_addr_map&#34;])
+        )
+    return addr</code></pre>
+</details>
+</dd>
+<dt id="simulator.sim_api.Hardware.run_simulation"><code class="name flex">
+<span>def <span class="ident">run_simulation</span></span>(<span>self, kernel, kernel_args, grid_dim, block_dim, block_schedule)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>This function invokes the simulation providing the executable
+kernel, the value of kernel arguments, the dimension of grid, the
+dimension of thread block, and the schedule of thread blocks. </p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>kernel</code></strong></dt>
+<dd>the executable kernel of MPU hardware. </dd>
+<dt><strong><code>kernel_args</code></strong></dt>
+<dd>a list of values for kernel arguments. </dd>
+<dt><strong><code>grid_dim</code></strong></dt>
+<dd>the dimension of block grid. </dd>
+<dt><strong><code>block_dim</code></strong></dt>
+<dd>the dimension of a thread block. </dd>
+<dt><strong><code>block_schedule</code></strong></dt>
+<dd>a dictionary mapping from thread block ID to the
+core ID. </dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>(dur, sim_clock_freq): a tuple of the duration of simulation (the
+total number of cycles) and the clock frequency of simulation
+with the unit detailed in the configuration.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run_simulation(
+    self, kernel, kernel_args, grid_dim, block_dim, block_schedule
+):
+    &#34;&#34;&#34;This function invokes the simulation providing the executable 
+    kernel, the value of kernel arguments, the dimension of grid, the 
+    dimension of thread block, and the schedule of thread blocks. 
+
+    Args:
+        kernel: the executable kernel of MPU hardware. 
+        kernel_args: a list of values for kernel arguments. 
+        grid_dim: the dimension of block grid. 
+        block_dim: the dimension of a thread block. 
+        block_schedule: a dictionary mapping from thread block ID to the
+            core ID. 
+
+    Returns:
+        (dur, sim_clock_freq): a tuple of the duration of simulation (the 
+            total number of cycles) and the clock frequency of simulation 
+            with the unit detailed in the configuration. 
+    &#34;&#34;&#34;
+
+    # Step 1: construct the dictionary for the arguments of kernel and 
+    # compute the register and shared memory usage for the kernel 
+    # Also, initialize the latency of instructions in this kernel
+    param_dict = {}
+    assert len(kernel.arg_list) == len(kernel_args), &#34;The length of &#34; \
+        &#34;provided argument values does not equal to the length of &#34; \
+        &#34;kernel argument list&#34;
+
+    for i in range(len(kernel.arg_list)):
+        param_name = kernel.arg_list[i]
+        param_value = kernel_args[i]
+        param_dict[param_name] = param_value
+
+    reg_usage_per_warp, shared_memory_usage_per_block = (
+        kernel.compute_resource_usage(
+            data_path_unit_size=self.config[&#34;data_path_unit_size&#34;],
+            num_threads_per_warp=self.config[&#34;num_threads_per_warp&#34;],
+            num_pe=self.config[&#34;num_pe&#34;],
+        ) 
+    )
+
+    kernel.init_instr_latency(self.config)
+
+    # Step 2: construct a dictionary mapping from core ID to a list of 
+    # thread blocks running on this core. 
+    block_task_dict = {}
+
+    for block_id_z in range(grid_dim[0]):
+        for block_id_y in range(grid_dim[1]):
+            for block_id_x in range(grid_dim[2]):
+                block_id = block_id_z 
+                block_id = block_id * grid_dim[1] + block_id_y 
+                block_id = block_id * grid_dim[2] + block_id_x 
+
+                global_core_id = block_schedule[block_id] 
+                loc = self.addr_hashing(
+                    global_core_id 
+                    * self.config[&#34;num_pg&#34;]
+                    * self.config[&#34;num_pe&#34;]
+                    * self.config[&#34;dram_bank_io_width&#34;]
+                )
+                core_loc = loc[:4]
+
+                if core_loc not in block_task_dict:
+                    block_task_dict[core_loc] = []
+                block_task_dict[core_loc].append(
+                    (block_id_z, block_id_y, block_id_x)
+                )
+
+    # Step 3: spawn a process for each task list 
+    for each_core_id, each_task in block_task_dict.items():
+        proc_id_y = each_core_id[0]
+        proc_id_x = each_core_id[1]
+        core_id_y = each_core_id[2]
+        core_id_x = each_core_id[3]
+
+        self.env.process(
+            self.processor_array[(proc_id_x, proc_id_y)].core_array[
+                (core_id_x, core_id_y)].run_simulation(
+                    reg_usage_per_warp, shared_memory_usage_per_block,  
+                    kernel, param_dict, grid_dim, block_dim, each_task 
+            )
+        )
+
+    # Step 4: invoke the simulation 
+    start_cycle = self.env.now
+    self.env.run() 
+    end_cycle = self.env.now 
+
+    dur = end_cycle - start_cycle 
+    sim_clock_freq = self.config[&#34;sim_clock_freq&#34;]
+
+    return (dur, sim_clock_freq) </code></pre>
+</details>
+</dd>
+<dt id="simulator.sim_api.Hardware.translate_bank_addr"><code class="name flex">
+<span>def <span class="ident">translate_bank_addr</span></span>(<span>self, bank_addr)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>translate dram bank address to row and column address</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>bank_addr</code></strong></dt>
+<dd>the local bank address (aligned to bank interface width)</dd>
+</dl>
+<h2 id="return">Return</h2>
+<p>row_addr: bank row address
+col_addr: bank column address</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def translate_bank_addr(self, bank_addr):
+    &#34;&#34;&#34;translate dram bank address to row and column address
+    Args:
+        bank_addr: the local bank address (aligned to bank interface width)
+    Return:
+        row_addr: bank row address
+        col_addr: bank column address
+    &#34;&#34;&#34;
+    row_addr = -1
+    col_addr = -1
+    if (self.config[&#34;dram_addr_map&#34;] == &#34;dram_addr_map_1&#34;):
+        col_addr = bank_addr % (self.config[&#34;dram_bank_col&#34;])
+        row_addr = ((bank_addr // (self.config[&#34;dram_bank_col&#34;])) 
+                    % self.config[&#34;dram_bank_row&#34;])
+    else:
+        raise NotImplementedError(
+            &#34;Unrecognized address mapping scheme: {}&#34;.format(
+                self.config[&#34;dram_addr_map&#34;])
+        )
+    return row_addr, col_addr</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="simulator" href="index.html">simulator</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="simulator.sim_api.init_hardware" href="#simulator.sim_api.init_hardware">init_hardware</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="simulator.sim_api.Hardware" href="#simulator.sim_api.Hardware">Hardware</a></code></h4>
+<ul class="">
+<li><code><a title="simulator.sim_api.Hardware.addr_hashing" href="#simulator.sim_api.Hardware.addr_hashing">addr_hashing</a></code></li>
+<li><code><a title="simulator.sim_api.Hardware.re_addr_hashing" href="#simulator.sim_api.Hardware.re_addr_hashing">re_addr_hashing</a></code></li>
+<li><code><a title="simulator.sim_api.Hardware.run_simulation" href="#simulator.sim_api.Hardware.run_simulation">run_simulation</a></code></li>
+<li><code><a title="simulator.sim_api.Hardware.translate_bank_addr" href="#simulator.sim_api.Hardware.translate_bank_addr">translate_bank_addr</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.3</a>.</p>
+</footer>
+</body>
+</html>
